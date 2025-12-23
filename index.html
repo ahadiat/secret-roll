@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Roll | Vietnam Roll Premium</title>
+    <link rel="icon" type="image/png" href="https://pbs.twimg.com/media/G802MKBbYAAQdpZ?format=png&name=small">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; background-color: #0a0a0a; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .hero-gradient { background: radial-gradient(circle at top right, #1a2e05, #0a0a0a); }
+        .cart-float { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .minimized { height: 60px; width: 150px; overflow: hidden; }
+        .slider-img { display: none; }
+        .slider-img.active { display: block; animation: fade 0.8s; }
+        @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body class="text-slate-200">
+
+    <nav class="fixed w-full z-50 glass">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="https://pbs.twimg.com/media/G802MKBbYAAQdpZ?format=png&name=small" class="h-10 w-10 rounded-full" alt="Logo">
+                <span class="text-xl font-extrabold tracking-tighter text-white">SECRET <span class="text-green-500">ROLL</span></span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-widest">
+                <a href="#home" class="hover:text-green-500">Home</a>
+                <a href="#menu" class="hover:text-green-500">Menu</a>
+                <a href="#promo" class="hover:text-green-500">Promosi</a>
+                <a href="#contact" class="hover:text-green-500">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-gradient min-h-screen flex items-center pt-20">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1">
+                <h2 class="text-green-500 font-bold mb-4 tracking-widest uppercase">The Secret of Freshness</h2>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6">
+                    Rasa Premium <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">Vietnam Roll</span>
+                </h1>
+                <p class="text-slate-400 text-lg mb-8 max-w-md">
+                    Rahsia kesedapan Vietnam Roll yang juicy, segar, dan dipadankan dengan Sos Thai Hijau yang padu.
+                </p>
+                <a href="#menu" class="inline-block px-8 py-4 bg-green-600 text-white font-bold rounded-full hover:bg-green-500 transition shadow-xl shadow-green-900/20">
+                    Lihat Menu Sekarang
+                </a>
+            </div>
+            <div class="order-1 md:order-2 relative">
+                <div class="absolute inset-0 bg-green-500/20 blur-[120px] rounded-full"></div>
+                <img src="https://pbs.twimg.com/media/G802ON6agAA3hG0?format=jpg&name=small" class="relative z-10 rounded-[2rem] shadow-2xl border border-white/10 rotate-2 hover:rotate-0 transition duration-500" alt="Hero Image">
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="py-24 px-6 bg-[#0d0d0d]">
+        <div class="max-w-6xl mx-auto text-center mb-16">
+            <h2 class="text-3xl font-bold text-white mb-4">Pilih Secret Roll Anda</h2>
+            <div class="w-20 h-1 bg-green-600 mx-auto"></div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="glass p-4 rounded-3xl group">
+                <div class="overflow-hidden rounded-2xl mb-4 h-64">
+                    <img src="https://pbs.twimg.com/media/G802gpubYAAZiWo?format=jpg&name=small" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Crab Stick">
+                </div>
+                <h3 class="text-xl font-bold text-white">Vietnam Roll Crab Sticks</h3>
+                <p class="text-green-500 font-bold my-2 text-lg">RM 10.00</p>
+                <button onclick="addToCart('Crab Sticks', 10.00)" class="w-full py-3 bg-white/5 hover:bg-green-600 hover:text-white transition rounded-xl font-bold">Tambah ke Troli</button>
+            </div>
+
+            <div class="glass p-4 rounded-3xl group">
+                <div class="overflow-hidden rounded-2xl mb-4 h-64">
+                    <img src="https://pbs.twimg.com/media/G802fvLaEAAd5ZR?format=jpg&name=small" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Ramen">
+                </div>
+                <h3 class="text-xl font-bold text-white">Vietnam Roll Ramen</h3>
+                <p class="text-green-500 font-bold my-2 text-lg">RM 12.00</p>
+                <button onclick="addToCart('Ramen', 12.00)" class="w-full py-3 bg-white/5 hover:bg-green-600 hover:text-white transition rounded-xl font-bold">Tambah ke Troli</button>
+            </div>
+
+            <div class="glass p-4 rounded-3xl group">
+                <div class="overflow-hidden rounded-2xl mb-4 h-64">
+                    <img src="https://pbs.twimg.com/media/G802PfzagAESVhd?format=jpg&name=900x900" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Sausage">
+                </div>
+                <h3 class="text-xl font-bold text-white">Vietnam Roll Sausage</h3>
+                <p class="text-green-500 font-bold my-2 text-lg">RM 10.00</p>
+                <button onclick="addToCart('Sausage', 10.00)" class="w-full py-3 bg-white/5 hover:bg-green-600 hover:text-white transition rounded-xl font-bold">Tambah ke Troli</button>
+            </div>
+
+            <div class="glass p-4 rounded-3xl group">
+                <div class="overflow-hidden rounded-2xl mb-4 h-64">
+                    <img src="https://pbs.twimg.com/media/G802ON6agAA3hG0?format=jpg&name=small" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Ayam">
+                </div>
+                <h3 class="text-xl font-bold text-white">Vietnam Roll Ayam</h3>
+                <p class="text-green-500 font-bold my-2 text-lg">RM 12.00</p>
+                <button onclick="addToCart('Ayam', 12.00)" class="w-full py-3 bg-white/5 hover:bg-green-600 hover:text-white transition rounded-xl font-bold">Tambah ke Troli</button>
+            </div>
+
+            <div class="glass p-4 rounded-3xl group">
+                <div class="overflow-hidden rounded-2xl mb-4 h-64">
+                    <img src="https://pbs.twimg.com/media/G802gpubYAAZiWo?format=jpg&name=small" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Sos Thai">
+                </div>
+                <h3 class="text-xl font-bold text-white">Sos Thai Hijau</h3>
+                <p class="text-green-500 font-bold my-2 text-lg">RM 5.00</p>
+                <button onclick="addToCart('Sos Thai Hijau', 5.00)" class="w-full py-3 bg-white/5 hover:bg-green-600 hover:text-white transition rounded-xl font-bold">Tambah ke Troli</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="promo" class="py-24 px-6">
+        <div class="max-w-4xl mx-auto overflow-hidden rounded-[2rem] glass relative h-[400px]">
+            <div class="slider-img active h-full">
+                <div class="absolute inset-0 bg-black/60 flex flex-col justify-center items-center text-center p-8">
+                    <h2 class="text-4xl font-bold text-white mb-4">PROMOSI JIMAT</h2>
+                    <p class="text-green-400 text-xl font-bold">Beli 5 Roll Percuma 1 Sos Thai!</p>
+                </div>
+                <img src="https://pbs.twimg.com/media/G802ON6agAA3hG0?format=jpg&name=small" class="w-full h-full object-cover">
+            </div>
+            <div class="slider-img h-full">
+                <div class="absolute inset-0 bg-black/60 flex flex-col justify-center items-center text-center p-8">
+                    <h2 class="text-4xl font-bold text-white mb-4">COMBO RAMEN</h2>
+                    <p class="text-green-400 text-xl font-bold">Vietnam Roll Ramen + Ayam hanya RM20!</p>
+                </div>
+                <img src="https://pbs.twimg.com/media/G802fvLaEAAd5ZR?format=jpg&name=small" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="py-24 bg-black border-t border-white/5">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl font-bold text-white mb-6">Hubungi Kami</h2>
+                <div class="space-y-4">
+                    <p class="flex items-center text-slate-400"><i class="fab fa-whatsapp text-green-500 mr-4 text-2xl"></i> +60 11-1535 0746</p>
+                    <p class="flex items-center text-slate-400"><i class="fas fa-map-marker-alt text-green-500 mr-4 text-2xl"></i> Terengganu, Malaysia</p>
+                </div>
+            </div>
+            <div class="text-center md:text-right">
+                <img src="https://pbs.twimg.com/media/G802MKBbYAAQdpZ?format=png&name=small" class="h-20 w-20 ml-auto mb-6 rounded-full" alt="Logo">
+                <p class="text-slate-500 text-sm italic">&copy; 2025 Secret Roll. Kepuasan anda rahsia kami.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cart-container" class="fixed bottom-6 right-6 glass p-4 rounded-2xl shadow-2xl cart-float minimized z-[100] w-[320px]">
+        <div class="flex justify-between items-center cursor-pointer" onclick="toggleCart()">
+            <h4 class="font-bold text-white"><i class="fas fa-shopping-cart text-green-500 mr-2"></i> Troli (<span id="cart-count">0</span>)</h4>
+            <i class="fas fa-chevron-up text-xs transition-transform" id="cart-chevron"></i>
+        </div>
+        <div class="mt-4">
+            <div id="cart-items" class="max-h-60 overflow-y-auto space-y-3 mb-4 pr-2">
+                </div>
+            <div class="border-t border-white/10 pt-4">
+                <div class="flex justify-between font-bold text-white mb-4">
+                    <span>Total:</span>
+                    <span>RM <span id="cart-total">0.00</span></span>
+                </div>
+                <button onclick="sendToWhatsApp()" class="w-full py-3 bg-green-600 text-white font-bold rounded-xl hover:bg-green-500">Hantar Tempahan</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Slider Logic
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slider-img');
+        function showSlides() {
+            slides.forEach(s => s.classList.remove('active'));
+            slideIndex++;
+            if (slideIndex > slides.length) slideIndex = 1;
+            slides[slideIndex-1].classList.add('active');
+            setTimeout(showSlides, 3000);
+        }
+        showSlides();
+
+        // Cart Logic
+        let cart = [];
+        function toggleCart() {
+            const container = document.getElementById('cart-container');
+            const chevron = document.getElementById('cart-chevron');
+            container.classList.toggle('minimized');
+            chevron.classList.toggle('rotate-180');
+        }
+
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            updateCartDisplay();
+            // Auto open cart when item added
+            document.getElementById('cart-container').classList.remove('minimized');
+        }
+
+        function updateCartDisplay() {
+            const list = document.getElementById('cart-items');
+            const count = document.getElementById('cart-count');
+            const total = document.getElementById('cart-total');
+            
+            list.innerHTML = '';
+            let totalVal = 0;
+
+            cart.forEach((item, index) => {
+                totalVal += item.price;
+                list.innerHTML += `
+                    <div class="flex justify-between items-center text-sm">
+                        <span class="text-slate-300">${item.name}</span>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-white">RM ${item.price.toFixed(2)}</span>
+                            <button onclick="removeFromCart(${index})" class="text-red-500"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            count.innerText = cart.length;
+            total.innerText = totalVal.toFixed(2);
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartDisplay();
+        }
+
+        function sendToWhatsApp() {
+            if(cart.length === 0) return alert('Troli anda kosong!');
+            
+            let mesej = "*TEMPAHAN SECRET ROLL*%0A--------------------%0A";
+            cart.forEach(item => {
+                mesej += `- ${item.name} (RM ${item.price.toFixed(2)})%0A`;
+            });
+            mesej += `--------------------%0A*TOTAL: RM ${document.getElementById('cart-total').innerText}*%0A%0A_Sila hantar maklumat alamat dan masa penghantaran._`;
+            
+            const noWA = "601115350746";
+            window.open(`https://wa.me/${noWA}?text=${mesej}`, '_blank');
+        }
+    </script>
+</body>
+</html>
